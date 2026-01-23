@@ -107,6 +107,61 @@ body {
   color: var(--grey-color);
 }
 
+/* Range Input */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Track */
+/* Chrome, Safari, Edge */
+.slider::-webkit-slider-runnable-track {
+  height: 6px;
+  background-color: var(--secondary-color);
+  border-radius: 100px;
+}
+
+/* Firefox */
+.slider::-moz-range-track {
+  height: 6px;
+  background-color: var(--secondary-color);
+  border-radius: 100px;
+}
+
+/* Thumb */
+/* Chrome, Safari, Edge */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--light-purple-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Firefox */
+.slider::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--light-purple-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge */
+.slider::-webkit-slider-thumb {
+  margin-top: -6px;
+}
+
+/* Firefox */
+.slider::-moz-range-thumb {
+  border: none;
+}
+
 /* Submit button */
 .form__submit-btn {
   border: none;

@@ -37,7 +37,7 @@ function Form() {
         <label className="form__group-title" htmlFor="guidence">
           Guidence (5.0)
         </label>
-        <input type="range" name="guidence" id="guidence" />
+        <input type="range" name="guidence" id="guidence" className="slider" />
       </div>
 
       <button type="submit" className="form__submit-btn">
