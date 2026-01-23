@@ -1,7 +1,17 @@
-function Menu() {
+import { useEffect } from "react";
+
+function Menu({ onMenu }) {
+  useEffect(() => {
+    document.querySelector("body").classList.add("menu--opened");
+
+    return () => {
+      document.querySelector("body").classList.remove("menu--opened");
+    };
+  }, []);
+
   return (
     <section className="menu" aria-label="Menu window">
-      <button type="button" className="menu__close-btn">
+      <button onClick={onMenu} type="button" className="menu__close-btn">
         <img src="/src/assets/Close.svg" alt="close icon" />
       </button>
 

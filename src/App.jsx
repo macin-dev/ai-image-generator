@@ -1,16 +1,25 @@
+import { useState } from "react";
 import BlurLayout from "./components/BlurLayout";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 
 function App() {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  function handleMenu() {
+    setOpenMenu((prevOpenMenu) => !prevOpenMenu);
+  }
+
   return (
     <>
-      <Header />
+      <Header onMenu={handleMenu} />
       <Form />
-      <BlurLayout>
-        <Menu />
-      </BlurLayout>
+      {openMenu && (
+        <BlurLayout>
+          <Menu onMenu={handleMenu} />
+        </BlurLayout>
+      )}
     </>
   );
 }

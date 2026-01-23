@@ -83,6 +83,10 @@ body {
   z-index: 99;
 }
 
+.menu--opened {
+  overflow-y: hidden;
+}
+
 /* Close button */
 .menu__close-btn {
   font-size: 1rem;
