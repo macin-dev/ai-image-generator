@@ -54,6 +54,74 @@ body {
 }
 
 /************ 
+  BlurLayout 
+************/
+.layout-blur {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/************ 
+  Menu 
+  Only mobile 
+************/
+.menu {
+  box-sizing: border-box;
+  max-width: 337px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  padding: 1em 2em;
+  z-index: 99;
+}
+
+/* Close button */
+.menu__close-btn {
+  font-size: 1rem;
+  border: none;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: var(--secondary-color);
+}
+
+.menu__close-btn img {
+  height: 24px;
+}
+
+/* Generate button */
+.menu__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.875em 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.menu__list-item a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8571428571em;
+  padding: 0.5714285714em;
+  color: var(--white-color);
+  font-size: 0.875rem;
+}
+
+.menu__list-item--active {
+  background-color: var(--light-purple-color);
+  border-radius: 0.5em;
+}
+
+/************ 
   Form 
 ************/
 .form,
