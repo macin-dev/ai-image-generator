@@ -36,6 +36,14 @@ body {
 }
 
 /************ 
+  * GridLayout 
+  ************/
+.grid-layout {
+  display: grid;
+  row-gap: 3.125em;
+}
+
+/************ 
   HEADER 
 ************/
 .header {
@@ -43,9 +51,16 @@ body {
   justify-content: space-between;
   padding: 1.125em 0.75em;
   border-bottom: 1px solid var(--secondary-color);
-  margin-bottom: 3.125em;
 }
 
+.header__logo {
+  width: 1.375em;
+  height: 1.375em;
+}
+
+/************ 
+  MenuButton 
+************/
 .header__menu {
   border: none;
   background-color: var(--light-purple-color);
@@ -123,6 +138,13 @@ body {
 .menu__list-item--active {
   background-color: var(--light-purple-color);
   border-radius: 0.5em;
+}
+
+/************ 
+  * MenuList -> Tablet 
+************/
+.menu__list--md {
+  display: none;
 }
 
 /************ 
@@ -240,6 +262,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  column-gap: 0.5em;
   background-color: var(--light-purple-color);
   color: var(--white-color);
   font-size: 1rem;
@@ -329,4 +352,124 @@ body {
 
 .form__resolution-list--item-selected {
   background-color: var(--light-purple-color);
+}
+
+/************ 
+* ImageView 
+************/
+.image {
+  margin-top: 2.5em;
+  box-sizing: border-box;
+  border: 4px solid var(--secondary-color);
+}
+
+.image img {
+  width: 100%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 50.5em;
+  }
+  /************ 
+  * GridLayout 
+  ************/
+  .grid-layout {
+    grid-template-columns: auto 1fr;
+  }
+
+  /************ 
+  * Header 
+  ************/
+  .header {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3.125em;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 4.5em;
+    border-right: 1px solid var(--secondary-color);
+  }
+
+  /************ 
+  * MenuButton 
+  ************/
+  .header__menu {
+    display: none;
+  }
+
+  /************ 
+  * MenuList 
+  ************/
+  .menu__list--md {
+    display: block;
+    margin: 0;
+    width: 2.5em;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .menu__list-item--md {
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 0.5em;
+  }
+
+  .menu__list-item--md:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  .menu__list-item--md img {
+    margin: 0 auto;
+  }
+
+  /* Active list */
+  .menu__list-item--active {
+    background-color: var(--light-purple-color);
+  }
+
+  /************ 
+  * Main 
+  ************/
+  .main {
+    margin-top: 3.125em;
+  }
+
+  /************ 
+  * Form 
+  ************/
+  /* Submit button */
+  .form__submit-btn {
+    cursor: pointer;
+  }
+
+  .form__submit-btn:hover {
+    background-color: var(--dark-purple-color);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /************ 
+  * Main 
+  ************/
+  .main {
+    display: flex;
+    column-gap: 1.875em;
+    max-width: 66.375em;
+    margin-inline: auto;
+  }
+
+  /************ 
+  * Form && Image
+  ************/
+  .form,
+  .image {
+    flex: 1 1 0;
+  }
+
+  .image {
+    margin-top: 0;
+    align-self: flex-start;
+  }
 }
