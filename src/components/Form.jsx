@@ -8,8 +8,20 @@ function Form() {
     negativePrompt: "",
     color: "",
     resolution: "",
-    guidance: "",
+    guidance: 5,
   });
+
+  const [errors, setErrors] = useState({});
+
+  function validateForm() {
+    const newErrors = {};
+
+    if (!formData.prompt.trim()) {
+      newErrors.prompt = "Prompt is required";
+    }
+
+    return newErrors;
+  }
 
   function handleChange(event) {
     event.preventDefault();
@@ -22,8 +34,21 @@ function Form() {
     }));
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const validatationErrors = validateForm();
+
+    if (Object.keys(validatationErrors).length > 0) {
+      setErrors(validatationErrors);
+      return;
+    }
+
+    setErrors({});
+    console.log(formData);
+  }
+
   return (
-    <form className="form container">
+    <form className="form container" onSubmit={handleSubmit}>
       <label className="form__label" htmlFor="prompt">
         Prompt
         <textarea
@@ -31,8 +56,12 @@ function Form() {
           id="prompt"
           value={formData.prompt}
           onChange={handleChange}
+          className={errors.prompt ? "form__input-error" : ""}
           placeholder="Breathtaking digital art illustration of a celestial galaxy, bursting with vibrant colors and sparkling stars, reminiscent of an infinite cosmic journey"
         ></textarea>
+        {errors.prompt && (
+          <span className="error-message">{errors.prompt}</span>
+        )}
       </label>
 
       <label className="form__label" htmlFor="negativePrompt">

@@ -247,6 +247,17 @@ body {
   padding-block: 0.75em;
 }
 
+/* Error handling */
+.form__input-error {
+  border: 1px solid var(--light-red-color) !important;
+}
+
+.error-message {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--light-red-color);
+}
+
 /************ 
   ColorList 
 ************/
