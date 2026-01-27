@@ -49,12 +49,15 @@ function Form() {
 
       <div className="form__group">
         <h3 className="form__group-title">Colors</h3>
-        <ColorList onChange={handleChange} />
+        <ColorList colorId={formData.color} onChange={handleChange} />
       </div>
 
       <div className="form__group">
         <h3 className="form__group-title">Resolution</h3>
-        <ResolutionList onChange={handleChange} />
+        <ResolutionList
+          resolutionId={formData.resolution}
+          onChange={handleChange}
+        />
       </div>
 
       <div className="form__group">

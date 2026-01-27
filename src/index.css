@@ -292,6 +292,13 @@ body {
   background-color: var(--white-color);
 }
 
+.form__color-list--item--selected {
+  box-shadow:
+    /* x y blur  */
+    1px 1px 12px var(--light-purple-color),
+    -1px -1px 12px var(--light-purple-color);
+}
+
 /************ 
   ResolutionList 
 ************/

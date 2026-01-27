@@ -6,12 +6,12 @@ const resolutions = [
   { id: "768x1344", name: "768 x 1344 (4:7)" },
 ];
 
-function ResolutionList({ onChange }) {
+function ResolutionList({ resolutionId, onChange }) {
   return (
     <div className="form__resolution-list">
       {resolutions.map((resolution) => (
         <label
-          className="form__resolution-list--item"
+          className={`form__resolution-list--item ${resolutionId === resolution.name ? "form__resolution-list--item-selected" : ""}`}
           htmlFor={resolution.id}
           key={resolution.id}
         >
