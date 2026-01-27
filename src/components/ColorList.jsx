@@ -1,6 +1,6 @@
 const colors = ["red", "orange", "green", "blue", "purple", "white"];
 
-function ColorList() {
+function ColorList({ onChange }) {
   return (
     <div className="form__color-list">
       {colors.map((color) => (
@@ -9,7 +9,13 @@ function ColorList() {
           htmlFor={color}
           key={color}
         >
-          <input type="radio" name="color-opt" id={color} />
+          <input
+            type="radio"
+            name="color"
+            id={color}
+            value={color}
+            onChange={onChange}
+          />
         </label>
       ))}
     </div>

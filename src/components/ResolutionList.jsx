@@ -6,7 +6,7 @@ const resolutions = [
   { id: "768x1344", name: "768 x 1344 (4:7)" },
 ];
 
-function ResolutionList() {
+function ResolutionList({ onChange }) {
   return (
     <div className="form__resolution-list">
       {resolutions.map((resolution) => (
@@ -16,7 +16,13 @@ function ResolutionList() {
           key={resolution.id}
         >
           {resolution.name}
-          <input type="radio" name="resolution" id={resolution.id} />
+          <input
+            type="radio"
+            name="resolution"
+            id={resolution.id}
+            value={resolution.name}
+            onChange={onChange}
+          />
         </label>
       ))}
     </div>
