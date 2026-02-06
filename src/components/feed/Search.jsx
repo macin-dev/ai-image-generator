@@ -1,6 +1,6 @@
 function Search() {
   return (
-    <label htmlFor="search" className="search">
+    <label htmlFor="search" className="search search-mb">
       <input
         type="text"
         name="search"

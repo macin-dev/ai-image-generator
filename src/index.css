@@ -371,8 +371,8 @@ body {
 * Feed Page 
 ************/
 .feed__container {
-  /* max-width: 32.0625em;
-  margin: 1em auto; */
+  max-width: 520px;
+  margin: 2rem auto;
 }
 
 /************ 
@@ -402,6 +402,10 @@ body {
   cursor: pointer;
 }
 
+.search-mb {
+  margin-bottom: 2.5em;
+}
+
 /************ 
 * CardImage 
 ************/
@@ -413,6 +417,7 @@ body {
 .card {
   position: absolute;
   overflow: hidden;
+  transition: transform 0.2s ease;
 }
 
 .card__img-wrapper {
@@ -548,6 +553,13 @@ body {
   .form__submit-btn:hover {
     background-color: var(--dark-purple-color);
   }
+
+  /************ 
+  * Feed Page 
+  ************/
+  .feed__container {
+    max-width: 792px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -572,5 +584,12 @@ body {
   .image {
     margin-top: 0;
     align-self: flex-start;
+  }
+
+  /************ 
+  * Feed Page 
+  ************/
+  .feed__container {
+    max-width: 1054px;
   }
 }

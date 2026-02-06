@@ -32,7 +32,7 @@ function Feed() {
           ? 1
           : containerWidth < 792
             ? 2
-            : containerWidth < 1064
+            : containerWidth < 1054
               ? 3
               : 4;
 
