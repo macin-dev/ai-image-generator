@@ -14,6 +14,7 @@ const images = [
 ];
 
 const GRID_GAP = 24;
+const CARD_INFO_HEIGHT = 36;
 
 function Feed() {
   const [collections, setCollections] = useState(images);
@@ -47,7 +48,7 @@ function Feed() {
           y: columnHeights[columnIndex],
         };
 
-        columnHeights[columnIndex] += height + GRID_GAP;
+        columnHeights[columnIndex] += height + GRID_GAP + CARD_INFO_HEIGHT;
 
         return {
           ...item,
@@ -88,6 +89,7 @@ function Feed() {
               style={{
                 width: `${item.width}px`,
                 transform: `translate(${item.x}px, ${item.y}px)`,
+                backgroundColor: item.dominantColor,
               }}
             />
           ))}

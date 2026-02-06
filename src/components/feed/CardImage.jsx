@@ -1,13 +1,30 @@
-function CardImage({ src, style }) {
-  return (
-    <div className="card" style={style}>
-      <img
-        src={`/src/assets/ai-images/${src}`}
-        alt="placeholder"
-        className="generated-image"
-      />
+import { useState } from "react";
 
-      {/* <div className="card__info">
+function CardImage({ src, style }) {
+  const [loaded, setLoaded] = useState(false);
+  const { backgroundColor, width, transform } = style;
+
+  return (
+    <div
+      className="card"
+      style={{
+        width,
+        transform,
+        backgroundColor: `${!loaded ? backgroundColor : "transparent"}`,
+      }}
+    >
+      <div
+        className={`card__img-wrapper ${loaded ? "card__img-wrapper--inset-shadow" : ""}`}
+      >
+        <img
+          src={`/src/assets/ai-images/${src}`}
+          alt="placeholder"
+          className={`generated-image ${loaded ? "loaded" : ""}`}
+          onLoad={() => setLoaded(true)}
+        />
+      </div>
+
+      <div className="card__info">
         <img
           src="/src/assets/ai-images/profile.jpeg"
           alt="creator picture"
@@ -17,7 +34,7 @@ function CardImage({ src, style }) {
         <div className="card__img-bookmark">
           <img src="/src/assets/bookmark.svg" alt="bookmark icon" />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

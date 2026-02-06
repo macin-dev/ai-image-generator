@@ -412,31 +412,41 @@ body {
 
 .card {
   position: absolute;
+  overflow: hidden;
+}
+
+.card__img-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5em;
+  transition: box-shadow 0.3s ease-in;
+}
+
+.card__img-wrapper--inset-shadow {
+  box-shadow: inset 0 0 0 4px var(--secondary-color);
 }
 
 .generated-image {
+  position: relative;
   width: 100%;
   height: auto;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 0.5em;
 }
 
-/* .card {
-  border: 1px solid white;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-} */
-
-/* .generated-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.loaded {
+  opacity: 1;
 }
 
 .card__info {
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
-  column-gap: 0.5em;
+  column-gap: 8px;
+  height: 28px;
+  padding-top: 8px;
 }
 
 .creator-picture {
@@ -456,7 +466,7 @@ body {
   margin-left: auto;
   border-radius: 0.25em;
   padding: 0.375em;
-} */
+}
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 1024px) {
