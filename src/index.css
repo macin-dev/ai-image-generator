@@ -367,6 +367,97 @@ body {
   width: 100%;
 }
 
+/************ 
+* Feed Page 
+************/
+.feed__container {
+  /* max-width: 32.0625em;
+  margin: 1em auto; */
+}
+
+/************ 
+* Search 
+************/
+.search {
+  display: flex;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.5em;
+}
+
+.search__input {
+  border: none;
+  flex: 1 1 auto;
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  color: var(--white-color);
+  padding: 0.75em;
+}
+
+.search__input::placeholder {
+  color: var(--grey-color);
+}
+
+.search__icon {
+  padding: 0.75em;
+  cursor: pointer;
+}
+
+/************ 
+* CardImage 
+************/
+.container-images {
+  position: relative;
+  width: 100%;
+}
+
+.card {
+  position: absolute;
+}
+
+.generated-image {
+  width: 100%;
+  height: auto;
+}
+
+/* .card {
+  border: 1px solid white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+} */
+
+/* .generated-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__info {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.creator-picture {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+
+.card__creator-username {
+  font-size: 0.75em;
+  letter-spacing: -0.04166666667em;
+  font-weight: 500;
+}
+
+.card__img-bookmark {
+  background-color: var(--secondary-color);
+  margin-left: auto;
+  border-radius: 0.25em;
+  padding: 0.375em;
+} */
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 1024px) {
   .container {
